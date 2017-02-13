@@ -27,7 +27,6 @@ Adventures.bindErrorHandlers = function() {
 
 //The core function of the app, sends the user's choice and then parses the results to the server and handling the response
 Adventures.chooseOption = function() {
-    console.log($(this).val())
     Adventures.currentStep++;
     $.ajax("/story", {
         type: "POST",
@@ -41,16 +40,24 @@ Adventures.chooseOption = function() {
         contentType: "application/json",
         success: function(data) {
             console.log(data);
-
-            Adventures.write(data);
+            if (data.end) {
+                console.log('runs')
+                $('.game-options').hide();
+                $('#life.score-tracking').hide();
+                $('#coins.score-tracking').hide();
+                Adventures.setImage(data.image);
+                $(".situation-text").text(data.title).show();
+                $('<h2/>').text(data.msg).append($('.options-list'));
+            } else {
+                Adventures.write(data);
+            }
         }
     });
 };
 
 Adventures.write = function(data) {
-
-    console.log(data['life']);
-    //update life and coins
+    console.log('write funct')
+        //update life and coins
     $('#life.score-tracking .count').text(data['life']);
     $('#coins.score-tracking .count').text(data['coins']);
     //write question

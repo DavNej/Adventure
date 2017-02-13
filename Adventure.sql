@@ -71,7 +71,7 @@ VALUES
     (1, 4, 'Ask for direction', 0, 10),
     
     (2, 1, 'Eat it!', 50, 0),
-    (2, 2, 'Give him 10 coins in exchange', 0, 15),
+    (2, 2, 'Give him 10 coins in exchange', 0, 10),
     (2, 3, 'Ignore it', 10, 0),
     (2, 4, 'Ask for direction', 0, 10),
     
@@ -81,7 +81,7 @@ VALUES
     (3, 4, 'Give him a banana', 0, 10),
     
     (4, 1, 'Say hi!', 50, 0),
-    (4, 2, 'Give him 15 coins', 15, 100),
+    (4, 2, 'Give him 15 coins', 20, 15),
     (4, 3, 'Ignore him', 100, 0),
     (4, 4, 'Give him peanuts', 0, 10),
     
@@ -102,7 +102,7 @@ VALUES
     (7, 4, 'Give him a mouse', 0, 10),
     
     (8, 1, 'Say hi!', 50, 0),
-    (8, 2, 'Give him 15 coins', 15, 100),
+    (8, 2, 'Give him 15 coins', 100, 15),
     (8, 3, 'Ignore him', 100, 0),
     (8, 4, 'Give him honey', 0, 10)    
 ;
